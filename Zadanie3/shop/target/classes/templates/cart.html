@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Shop</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: header"></div>
+<div th:replace="fragments.html :: line"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div th:replace="fragments.html :: line2"></div>
+
+<div id="content">
+    <div id="mainText"><h1> Koszyk </h1></div>
+    <div class="order-position">
+        <table id="cartTitle">
+            <tr>
+                <th><div class="name">Nazwa</div></th>
+                <th><div class="description">Opis</div></th>
+                <th><div class="quantity">Ilosc</div></th>
+                <th><div class="piece-price">Cena jednostkowa</div></th>
+                <th><div class="price">Cena</div></th>
+                <th>Usun z koszyka</th>
+            </tr>
+        </table>
+    </div>
+    <div th:each="position : ${cart.orderPositions}" class="order-position">
+        <table id="cartProducts">
+            <tr>
+                <th><div th:text="${position.product.name}" class="name"></div></th>
+                <th><div th:text="${position.product.description}" class="description"></div></th>
+                <th><div th:text="${position.quantity}" class="quantity"></div></th>
+                <th><div th:text="${position.product.price + 'zl'}" class="piece-price"></div></th>
+                <th><div th:text="${position.product.price * position.quantity + 'zl'}" class="price"></div></th>
+                <th><a th:if="${logged == true}" th:href="@{/cart/delete/{id}(id=${position.product.id})}" id="cartDelete">X</a></th>
+            </tr>
+        </table>
+    </div>
+    <div class="order-position">
+        <table id="cartPrice">
+            <tr>
+                <th><div class="name"></div></th>
+                <th><div class="description"></div></th>
+                <th><div class="quantity"></div></th>
+                <th></th>
+                <th>Suma: <div th:text="${result + 'zl'}" class="price"></div></th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
+    <a href="/order" id="buttonOrder">Zamow</a>
+</div>
+</body>
+</html>

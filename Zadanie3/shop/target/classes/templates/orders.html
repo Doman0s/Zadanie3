@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Shop</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: header"></div>
+<div th:replace="fragments.html :: line"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div th:replace="fragments.html :: line2"></div>
+
+<div id="content">
+    <div id="mainText"><h1> Zamowienia </h1></div>
+    <div class="order">
+        <table id="orderTitle">
+            <tr>
+                <th><div class="date">Data</div></th>
+                <th><div class="price">Cena</div></th>
+            </tr>
+        </table>
+    </div>
+    <div th:each="order : ${orders}" class="order">
+        <table id="orderProducts">
+            <tr>
+                <th><div th:text="${order.date}" class="date"></div></th>
+                <th><div th:text="${order.price + 'zl'}" class="price"></div></th>
+            </tr>
+        </table>
+        <div th:each="orderPosition : ${order.orderPositions}" class="order-position">
+            <table id="orderProducts2">
+                <tr>
+                    <th>Nazwa: <div th:text="${orderPosition.product.name}" class="name"></div></th>
+                    <th>Opis: <div th:text="${orderPosition.product.description}" class="description"></div></th>
+                    <th>Ilosc: <div th:text="${orderPosition.quantity}" class="quantity"></div></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

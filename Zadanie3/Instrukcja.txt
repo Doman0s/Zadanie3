@@ -1,0 +1,6 @@
+Załączyłem plik z bazą danych 'foodshop.sql', gotowy do importu, są w nim dodane produkty i użytkownicy.
+Aby go zaimportować, najpierw trzeba stworzyć bazę danych o nazwie 'foodshop', po wejściu w nią, w zakładce import, wskazujemy wyżej wymieniony plik.
+
+Dane logowania:
+login: admin, hasło: admin
+login: user, hasło: user

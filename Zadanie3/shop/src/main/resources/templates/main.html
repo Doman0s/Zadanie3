@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Shop</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: header"></div>
+<div th:replace="fragments.html :: line"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div th:replace="fragments.html :: line2"></div>
+
+<div id="content">
+    <div id="mainText"><h1> Produkty </h1></div>
+    <div th:each="product : ${products}" class="product">
+        <table id="tableProducts">
+            <tr>
+                <th><div th:text="${product.name}" class="name"></div></th>
+                <th><div th:text="${product.description}" class="description"></div></th>
+                <th><div th:text="${product.price} + 'zl'" class="price"></div></th>
+                <th><div th:text="'Ilosc: ' + ${product.quantity}" class="quantity"></div></th>
+                <th><a th:if="${logged == true}" th:href="@{/cart/add/{id}(id=${product.id})}" id="toCart">Do koszyka</a></th>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

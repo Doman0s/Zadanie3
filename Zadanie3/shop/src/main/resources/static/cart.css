@@ -1,0 +1,79 @@
+.order-position {
+    width: 75%;
+    border: 1px solid black;
+    margin: 2px 0;
+}
+
+.order-position .name {
+    width: 55%;
+    display: inline-block;
+}
+
+.order-position .description {
+    width: 15%;
+    display: inline-block;
+}
+
+.order-position .quantity {
+    width: 9%;
+    display: inline-block;
+}
+
+.order-position .piece-price {
+    width: 9%;
+    display: inline-block;
+}
+
+.order-position .price {
+    width: 9%;
+    display: inline-block;
+}
+
+body {
+    background-color: #4c4c6e;
+}
+
+#cartTitle {
+    width: 100%;
+}
+
+#cartTitle tr th {
+    width: 16%;
+}
+
+#cartProducts {
+    width: 100%;
+}
+
+#cartProducts tr th {
+    width: 16%;
+}
+
+#cartPrice {
+    width: 100%;
+}
+
+#cartPrice tr th {
+    width: 16%;
+}
+
+#buttonOrder {
+    margin: 15px 15px;
+    text-decoration: none;
+    color: black;
+    padding: 5px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    background: white;
+    transition: background, color 0.5s;
+    transition: background 0.5s;
+}
+
+#buttonOrder:hover {
+    background: #7144a6;
+    color: white;
+}
+
+#cartDelete {
+    color: #8b0000;
+}

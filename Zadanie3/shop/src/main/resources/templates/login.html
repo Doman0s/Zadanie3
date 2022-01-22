@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Shop</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: header"></div>
+<div th:replace="fragments.html :: line"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div th:replace="fragments.html :: line2"></div>
+
+<div id="content">
+    <form method="post" id="login-form">
+        <div id="mainText"><h1> Logowanie </h1></div>
+        <table id="table1">
+            <tr>
+                <th><h3>Login: </h3></th>
+                <th><input type="text" placeholder="Login" name="login"></th>
+            </tr>
+            <tr>
+                <th><h3>Haslo: </h3></th>
+                <th><input type="password" placeholder="Haslo" name="password"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><input type="submit" value="Zaloguj"></th>
+            </tr>
+        </table>
+    </form>
+    <div id="registerDiv"><h2> Nie masz jeszcze konta? Zarejestruj sie juz teraz! </h2></div>
+    <a href="/register" id="registerLink"><b>Zarejestruj sie</b></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+.order {
+    width: 75%;
+    border: 1px solid black;
+    margin: 2px 0;
+}
+
+.order:hover > .order-position {
+    display: block;
+}
+
+.order .date {
+    width: 30%;
+    display: inline-block;
+}
+
+.order .price {
+    width: 15%;
+    display: inline-block;
+}
+
+.order .order-position {
+    display: none;
+}
+
+.order-position {
+    width: 75%;
+    border: 1px solid black;
+    margin: 2px 0;
+}
+
+.order-position .name {
+    width: 65%;
+    display: inline-block;
+}
+
+.order-position .description {
+    width: 25%;
+    display: inline-block;
+}
+
+.order-position .quantity {
+    width: 10%;
+    display: inline-block;
+}
+
+body {
+    background-color: #4c4c6e;
+}
+
+#orderTitle {
+    width: 100%;
+}
+
+#orderTitle tr th {
+    width: 50%;
+}
+
+#orderProducts {
+    width: 100%;
+}
+
+#orderProducts tr th {
+    width: 50%;
+}
+
+#orderProducts2 {
+    border: none !important;
+    width: 100%;
+}
+
+#orderProducts2 tr {
+    border: none !important;
+}
+
+#orderProducts2 tr th {
+    border: none !important;
+    width: 33%;
+}
